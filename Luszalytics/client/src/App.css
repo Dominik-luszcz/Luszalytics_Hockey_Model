@@ -1,0 +1,114 @@
+.mainContainer {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  font-size: 56px;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+}
+
+.textContainer {
+  display: flex;
+  margin: 2.5%;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: normal;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultContainer,
+.historyItem {
+  flex-direction: row;
+  display: flex;
+  width: 400px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.historyContainer {
+  flex-direction: column;
+  display: flex;
+  height: 200px;
+  align-items: center;
+  flex-grow: 5;
+  justify-content: flex-start;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1%;
+  /* height: 240px; */
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 2%;
+}
+
+.pieContainer {
+  display: block;
+  flex-direction: row;
+  align-items: left;
+  justify-content: start;
+}
+
+.flexContainer {
+  display: flex;
+}
+
+.flexChild {
+  flex: 1;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.comparisonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 800px;
+  padding-bottom: 3%;
+}
+
+.radarContainer {
+  display: block;
+  justify-content: end;
+  margin-left: auto;
+  height: 400px;
+  width: 650px;
+}
+
+.inputContainer > .errorLabel {
+  color: red;
+  font-size: 12px;
+}
+
+.inputBox {
+  height: 48px;
+  width: 400px;
+  font-size: large;
+  border-radius: 8px;
+  border: 1px solid grey;
+  padding-left: 8px;
+}

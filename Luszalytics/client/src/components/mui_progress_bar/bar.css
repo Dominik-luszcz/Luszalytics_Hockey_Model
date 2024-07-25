@@ -1,0 +1,16 @@
+* {
+
+    .bar {
+        height: 100%;
+        &.low {
+        background-color: #f44336;
+        };
+        &.medium {
+        background-color: #efbb5aa3;
+        };
+        &.high {
+        background-color: #088208a3;
+        }
+    
+    }
+}
