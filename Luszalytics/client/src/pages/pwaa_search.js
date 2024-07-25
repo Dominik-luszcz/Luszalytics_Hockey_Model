@@ -289,7 +289,7 @@ const SearchPWAA = () => {
                             textAnchor="middle"
                             style={{ fontSize: 11 }}
                             x={100} y={100}
-                            text={[position === 'G' ? 'High Danger' : "PK xGoals Against", position === 'G' ? highDanger.toFixed(2) :  pkXGoalsA.toFixed(2) == 0.00 ? 'N/A' : pkXGoalsA.toFixed(2)]}
+                            text={[position === 'G' ? 'High Danger' : "PK xGoals Against", position === 'G' ? highDanger.toFixed(2) :  pkXGoalsA.toFixed(2) === 0.00 ? 'N/A' : pkXGoalsA.toFixed(2)]}
                         />
 
                     </svg>
@@ -324,7 +324,7 @@ const SearchPWAA = () => {
                             textAnchor="middle"
                             style={{ fontSize: 13 }}
                             x={100} y={100}
-                            text={[position === 'G' ? "" : "PP Chances", position === 'G' ? "" : ppChances.toFixed(2) == 0.00 ? 'N/A' : ppChances.toFixed(2)]}
+                            text={[position === 'G' ? "" : "PP Chances", position === 'G' ? "" : ppChances.toFixed(2) === 0.00 ? 'N/A' : ppChances.toFixed(2)]}
                         />
 
                     </svg>
