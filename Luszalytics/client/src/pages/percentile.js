@@ -27,6 +27,7 @@ const Percentile = () => {
     const [gameState, setGameState] = useState('EV');
     //const [position, setPosition] = useState('F');
 
+    const [playerName, setPlayerName] = useState('');
     const [chosenPlayerData, setChosenPlayerData] = useState([{statistic: "N/A", percentile: 0}]);
 
 
@@ -87,10 +88,9 @@ const Percentile = () => {
 
 
 
-    const updatePlayer1 = (playerName) => {
-        const name = playerName.slice(0, -4);
+    const updatePlayer1 = (name = playerName, situation = 'EV') => {
         //const position = playerName.slice(-2, -1);
-        if (gameState === 'EV'){
+        if (situation === 'EV'){
             const data = evForwardData.concat(evDefenceData, evGoalieData);
             const player = data.find((element) => element.name === name);
 
@@ -104,9 +104,14 @@ const Percentile = () => {
 
             setChosenPlayerData(playerData);
              
-        } else if (gameState === 'PP') {
+        } else if (situation === 'PP') {
             const data = ppForwardData.concat(ppDefenceData, ppGoalieData);
             const player = data.find((element) => element.name === name); 
+
+            if (player === undefined){
+                setChosenPlayerData([{statistic: "N/A", percentile: 0}]);
+                return;
+            }
 
             playerData = Object.keys(player).filter((key) => {
                 return key.includes("PP_");
@@ -121,6 +126,11 @@ const Percentile = () => {
         } else {
             const data = pkForwardData.concat(pkDefenceData, pkGoalieData);
             const player = data.find((element) => element.name === name); 
+
+            if (player === undefined){
+                setChosenPlayerData([{statistic: "N/A", percentile: 0}]);
+                return;
+            }
 
             playerData = Object.keys(player).filter((key) => {
                 return key.includes("PK_");
@@ -167,6 +177,7 @@ const Percentile = () => {
                 type="primary"
                 onPress={() => {
                     setGameState('EV');
+                    updatePlayer1(playerName, 'EV');
                 }}
                 > Even Strength </AwesomeButton> 
                 <AwesomeButton
@@ -174,6 +185,7 @@ const Percentile = () => {
                 type="primary"
                 onPress={() => {
                     setGameState('PP');
+                    updatePlayer1(playerName, 'PP');
                 }}
                 > Power Play </AwesomeButton> 
                 <AwesomeButton
@@ -181,6 +193,7 @@ const Percentile = () => {
                 type="primary"
                 onPress={() => {
                     setGameState('PK');
+                    updatePlayer1(playerName, 'PK');
                 }}
                 > Penalty Kill </AwesomeButton> 
             </div>
@@ -196,7 +209,8 @@ const Percentile = () => {
                             : ppForwardData.concat(ppDefenceData, ppGoalieData).map((option) => option.name + " (" + option.position + ")")
                         }
                         onChange={(event, data) => {
-                            updatePlayer1(data);
+                            setPlayerName(data.slice(0, -4));
+                            updatePlayer1(data.slice(0, -4), gameState);
                         }}
                         renderInput={(params) => (
                         <TextField

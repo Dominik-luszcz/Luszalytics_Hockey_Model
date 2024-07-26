@@ -9,12 +9,12 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Home from './pages';
-import PWAA from './pages/pwaa.js';
-import TeamPWAA from './pages/team_pwaa.js';
-import StatExplanations from './pages/stat_explanations.js';
-import PlayersPWAA from './pages/players_pwaa.js';
-import SearchPWAA from './pages/pwaa_search.js';
-import PlayerComparisonPWAA from './pages/pwaa_player_comparison.js';
+import PWAA from './pages/pwaa/pwaa.js';
+import TeamPWAA from './pages/pwaa/team_pwaa.js';
+import StatExplanations from './pages/pwaa/stat_explanations.js';
+import PlayersPWAA from './pages/pwaa/players_pwaa.js';
+import SearchPWAA from './pages/pwaa/pwaa_search.js';
+import PlayerComparisonPWAA from './pages/pwaa/pwaa_player_comparison.js';
 import Percentile from './pages/percentile.js';
 
 function App() {
