@@ -446,7 +446,7 @@ const SearchPWAA = () => {
                     cssModule={AwesomeButtonStyles}
                     type="primary"
                 // onPress={onButtonClick}
-                > Search Player or Team </AwesomeButton> 
+                > Search Player </AwesomeButton> 
                 <AwesomeButton
                     cssModule={AwesomeButtonStyles}
                     type="primary"
