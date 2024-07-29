@@ -130,8 +130,8 @@ const columns = [
     },
     {
         width: 150,
-        label: 'Defensive_Actions',
-        dataKey: 'Defensive_Actions',
+        label: 'EV_Shots_Against',
+        dataKey: 'EV_Shots_Against',
         numeric: true,
         format: (value) => value.toFixed(2),
     },

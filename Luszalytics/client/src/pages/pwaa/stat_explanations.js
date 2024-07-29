@@ -48,7 +48,7 @@ const StatExplanations = () => {
                     <li>EV_Chances: The amount of even-strength expected goals created above average</li>
                     <li>PP_Chances: The amount of power play excected goals created above average</li>
                     <li>Penalty_Differential: The amount of penalties drawn - penalties taken above average</li>
-                    <li>Defensive_Actions: The amount of shot blocks and takeaways above average</li>
+                    <li>EV_Shots_Against: The amount of shots faced when a player is on the ice above average</li>
                     <li>High_Danger - Goalies: High danger xGoals minus high danger goals given up above average </li>
                     <li>Low_Danger - Goalies: Low danger xGoals minus low danger goals given up above average </li>
                     <li>GSAE - Goalies (Goals Saved Above Expected): The amount of goals saved compared to xGoals above average</li>

@@ -23,7 +23,7 @@ const SearchPWAA = () => {
     const [evChances, setEVChances] = useState(0);
     const [ppChances, setPPChances] = useState(0);
     const [penaltyDiff, setPenaltyDiff] = useState(0);
-    const [defensiveActions, setDefensiveActions] = useState(0);
+    const [EVShotsAgainst, setEVShotsAgainst] = useState(0);
     const [finishing, setFinishing] = useState(0);
     const [highDanger, setHighDanger] = useState(0);
     const [mediumDanger, setMediumDanger] = useState(0);
@@ -99,7 +99,7 @@ const SearchPWAA = () => {
             setEVChances(0);
             setPPChances(0);
             setPenaltyDiff(0);
-            setDefensiveActions(0);
+            setEVShotsAgainst(0);
         } else {
             setPlayerData1({"Offence": player.Offence_Ranking, "Production" : player.Production_Ranking, "Finishing": player.Finishing_Ranking, 
                 "Defence": player.Defence_Ranking, "Penalties" : player.Penalty_Ranking, "Physicality": player.Physicality_Ranking, "PWAA": player.PWAA_Ranking
@@ -112,7 +112,7 @@ const SearchPWAA = () => {
             setEVChances(player.EV_Chances);
             setPPChances(player.PP_Chances);
             setPenaltyDiff(player.Penalty_Differential);
-            setDefensiveActions(player.Defensive_Actions);
+            setEVShotsAgainst(player.EV_Shots_Against);
             setFinishing(player.Finishing);
             
             if (position === 'D'){
@@ -350,9 +350,9 @@ const SearchPWAA = () => {
                     <svg width={205} height={210}>
                         <VictoryPie
                             standalone={false}
-                            colorScale={getColourScale(defensiveActions)}
+                            colorScale={getColourScale(EVShotsAgainst)}
                             width={200} height={200}
-                            data={getScaledData(defensiveActions, 'Defensive_Actions')}
+                            data={getScaledData(EVShotsAgainst, 'EV_Shots_Against')}
                             innerRadius={75} labelRadius={100}
                             style={{ labels: { display: 'none' } }}
                         />
@@ -360,7 +360,7 @@ const SearchPWAA = () => {
                             textAnchor="middle"
                             style={{ fontSize: 11 }}
                             x={100} y={100}
-                            text={[position === 'G' ? "" : "Defensive Actions", position === 'G' ? "" : defensiveActions.toFixed(2)]}
+                            text={[position === 'G' ? "" : "EV Shots Against", position === 'G' ? "" : EVShotsAgainst.toFixed(2)]}
                         />
 
                     </svg>
