@@ -31,6 +31,7 @@ const SearchPWAA = () => {
     const [reboundControl, setReboundControl] = useState(0);
     const [gsae, setGSAE] = useState(0);
     const [position, setPosition] = useState('F');
+    const [team, setTeam] = useState("");
 
     const [playerData1, setPlayerData1] = useState({"Offence": 0, "Production" : 0, "Finishing": 0, 
         "Defence": 0, "Penalties" : 0, "Physicality": 0, "PWAA": 0
@@ -78,6 +79,7 @@ const SearchPWAA = () => {
         const position = playerName.slice(-2, -1);
         const data = forwardData.concat(defenceData, goalieData);
         const player = data.find((element) => element.name === name); 
+        setTeam(player.team);
         if (position === 'G'){
             setPlayerData1({"GSAE": player.GSAE_Ranking, "Low Danger": player.Low_Danger_Ranking, "Medium Danger": player.Medium_Danger_Ranking, "High Danger": player.High_Danger_Ranking,
                 "Rebound Control": player.Rebound_Control_Ranking, "PWAA": player.PWAA_Ranking
@@ -200,6 +202,9 @@ const SearchPWAA = () => {
                         )}
                     />
                 </Stack>
+                <div style={{fontSize: 22}}>
+                    Team: {team}
+                </div>
             </div>
 
             <div className="flexContainer">
@@ -307,7 +312,7 @@ const SearchPWAA = () => {
                             textAnchor="middle"
                             style={{ fontSize: 13 }}
                             x={100} y={100}
-                            text={[position === 'G' ? 'Rebound Control' : "EV Chances", position === 'G' ? highDanger.toFixed(2) : evChances.toFixed(2)]}
+                            text={[position === 'G' ? 'Rebound Control' : "EV Chances", position === 'G' ? reboundControl.toFixed(2) : evChances.toFixed(2)]}
                         />
 
                     </svg>

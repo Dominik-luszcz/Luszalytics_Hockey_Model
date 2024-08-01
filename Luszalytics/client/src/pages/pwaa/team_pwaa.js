@@ -33,7 +33,7 @@ const columns = [
     {
         width: 150,
         label: 'PWAA',
-        dataKey: 'PAA',
+        dataKey: 'PWAA',
         numeric: true,
         format: (value) => value.toFixed(2),
     },
